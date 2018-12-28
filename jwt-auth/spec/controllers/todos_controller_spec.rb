@@ -7,7 +7,7 @@ RSpec.describe TodosController, type: :controller do
 
   before do
     payload = { user_id: user.id }
-    session = JWTSessions::Session.new(payload: paylopad)
+    session = JWTSessions::Session.new(payload: payload)
     @tokens = session.login
   end
 

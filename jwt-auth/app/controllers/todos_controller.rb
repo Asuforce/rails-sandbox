@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :authorize_access_request
+  before_action :authorize_access_request!
   before_action :set_todo, only: [:show, :update, :destroy]
 
   def index

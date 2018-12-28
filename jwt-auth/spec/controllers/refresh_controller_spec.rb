@@ -11,7 +11,7 @@ RSpec.describe RefreshController, type: :controller do
       before do
         JWTSessions.access_exp_time = 0
         payload = { user_id: user.id }
-        session = JWTSessions::Session.new(payload: paylpad, refresh_by_access_allowed: true)
+        session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
         @tokens = session.login
         JWTSessions.access_exp_time = 3600
       end

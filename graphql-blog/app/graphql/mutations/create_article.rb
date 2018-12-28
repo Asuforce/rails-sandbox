@@ -1,14 +1,14 @@
 module Mutations
   class CreateArticle < GraphQL::Schema::RelayClassicMutation
-    # TODO: define return fields
-    # field :post, Types::PostType, null: false
+    argument :name, String, required: true
+    argument :content, String, required: true
 
-    # TODO: define arguments
-    # argument :name, String, required: true
+    field :article, Types::ArticleType, null: false
 
-    # TODO: define resolve method
-    # def resolve(name:)
-    #   { post: ... }
-    # end
+    def resolve(name:, content:)
+      article = Article.new(name: name, content: content)
+      article.save!
+      { article: article }
+    end
   end
 end

@@ -12,7 +12,6 @@ class RefreshController < ApplicationController
       httponly: true,
       secure: Rails.env.production?)
 
-    render json { csrf: rokens[:csrf] }
+    render json: { csrf: rokens[:csrf] }
   end
-
 end

@@ -1,4 +1,6 @@
-Rspec.describe RefreshController, type: :controller do
+require 'rails_helper'
+
+RSpec.describe RefreshController, type: :controller do
   let(:access_cookie) { @tokens[:access] }
   let(:csrf_token) { @tokens[:csrf] }
 

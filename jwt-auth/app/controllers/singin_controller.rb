@@ -1,4 +1,4 @@
-class SigninController < ApplicationController
+class SinginController < ApplicationController
   before_action :authorize_access_request!, only: [:destroy]
 
   def create
@@ -12,7 +12,7 @@ class SigninController < ApplicationController
         httponly: true,
         secure: Rails.env.production?)
 
-        render json { csrf: tokens[:csrf] }
+        render json: { csrf: tokens[:csrf] }
     else
       not_authorized
     end

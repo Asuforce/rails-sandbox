@@ -12,7 +12,7 @@ RSpec.describe TodosController, type: :controller do
   end
 
   describe 'GET #index' do
-    let(:todo) { { create(:todo, user: user) } }
+    let(:todo) { create(:todo, user: user) }
 
     it 'returns a success respone' do
       request.cookies[JWTSessions.access_cookie] = @tokens[:access]
@@ -33,7 +33,7 @@ RSpec.describe TodosController, type: :controller do
   end
 
   describe 'GET #show' do
-    let(:todo) { { create(:todo, user: user) } }
+    let(:todo) { create(:todo, user: user) }
 
     it 'returns a success response' do
       request.cookies[JWTSessions.access_cookie] = @tokens[:access]
@@ -84,7 +84,7 @@ RSpec.describe TodosController, type: :controller do
   end
 
   describe 'PUT #update' do
-    let(:todo) { { create(:todo, user: user) } }
+    let(:todo) { create(:todo, user: user) }
 
     context 'with valid params' do
       let(:new_attributes) { { title: 'Super secret title' } }
@@ -122,7 +122,7 @@ RSpec.describe TodosController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let(:todo) { { create(:todo, user: user) } }
+    let(:todo) { create(:todo, user: user) }
 
     it 'destroys the requested todo' do
         request.cookies[JWTSessions.access_cookie] = @tokens[:access]

@@ -1,4 +1,4 @@
-RSpec.describe SigninController, type: :controller do
+RSpec.describe SinginController, type: :controller do
   describe 'POST #create' do
     let(:password) { 'password' }
     let(:user) { create(:user) }

@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   before_action :authorize_access_request
-  before :set_todo, only: [:show, :update, :destroy]
+  before_action :set_todo, only: [:show, :update, :destroy]
 
   def index
     render jsonL current_user.todos

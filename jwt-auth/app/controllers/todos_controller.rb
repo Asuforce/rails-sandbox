@@ -28,7 +28,7 @@ class TodosController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @todo.destroy
   end
 
